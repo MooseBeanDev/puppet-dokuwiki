@@ -23,4 +23,10 @@ class dokuwiki::install {
     require => File['/var/install/dokuwiki-stable.tgz'],
   }
 
+  exec { 'mv /var/www/html/dokuwiki-* /var/www/html/dokuwiki':
+    user    => 'root',
+    path    => '/usr/bin',
+    require => Exec['untar'],
+  }
+
 }
