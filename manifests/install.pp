@@ -16,17 +16,19 @@ class dokuwiki::install {
   }
 
   exec { 'untar':
-    command => 'tar -xzvf /var/install/dokuwiki-stable.tgz',
-    cwd     => '/var/www/html',
-    user    => 'root',
-    path    => '/usr/bin',
-    require => File['/var/install/dokuwiki-stable.tgz'],
+    command     => 'tar -xzvf /var/install/dokuwiki-stable.tgz',
+    cwd         => '/var/www/html',
+    user        => 'root',
+    path        => '/usr/bin',
+    refreshonly => true,
+    subscribe   => File['/var/install/dokuwiki-stable.tgz'],
   }
 
   exec { 'mv /var/www/html/dokuwiki-* /var/www/html/dokuwiki':
-    user    => 'root',
-    path    => '/usr/bin',
-    require => Exec['untar'],
+    user        => 'root',
+    path        => '/usr/bin',
+    refreshonly => true,
+    subscribe   => Exec['untar'],
   }
 
 }
