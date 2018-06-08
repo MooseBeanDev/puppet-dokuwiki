@@ -1,3 +1,9 @@
+# A description of what this class does
+#
+# @summary A short summary of the purpose of this class
+#
+# @example
+#   include dokuwiki::install
 class dokuwiki::install {
   file { '/var/install/':
     ensure => directory,
@@ -32,5 +38,4 @@ class dokuwiki::install {
     group => 'apache',
     require => Exec['untar-dokuwiki'],
   }
-
 }
