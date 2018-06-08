@@ -14,7 +14,7 @@ class dokuwiki::install {
 
   file { '/var/install/dokuwiki-stable.tgz':
     ensure  => present,
-    source  => 'https://download.dokuwiki.org/src/dokuwiki/dokuwiki-stable.tgz',
+    source  => $dokuwiki::download_url,
     owner   => 'root',
     group   => 'root',
     mode    => '770',
@@ -30,12 +30,12 @@ class dokuwiki::install {
     subscribe   => File['/var/install/dokuwiki-stable.tgz'],
   }
 
-  file { '/var/www/html/dokuwiki':
+  file { $dokuwiki::install_directory:
     ensure => directory,
     source => 'file:///var/install/dokuwiki-2018-04-22a',
     recurse => true,
-    owner => 'apache',
-    group => 'apache',
+    owner => $dokuwiki::dir_owner,
+    group => $dokuwiki::dir_group,
     require => Exec['untar-dokuwiki'],
   }
 }
