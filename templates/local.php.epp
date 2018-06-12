@@ -3,9 +3,9 @@
  * Dokuwiki's Main Configuration File - Local Settings
  */
 $conf['title'] = '<%= $dokuwiki::wiki_name %>';
-$conf['lang'] = 'en';
+$conf['lang'] = '<%= $dokuwiki::lang %>';
 $conf['license'] = '<%= $dokuwiki::license %>';
 $conf['useacl'] = <%= $dokuwiki::useacl %>;
 $conf['superuser'] = '<%= $dokuwiki::admin_login %>';
-$conf['disableactions'] = 'register';
+$conf['disableactions'] = '<%= $dokuwiki::disable_actions %>';
 

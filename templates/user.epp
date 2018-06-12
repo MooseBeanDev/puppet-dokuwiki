@@ -1,0 +1,2 @@
+<%- | String $user_login, String $user_password_hash, String $user_full_name, String $user_email, String $user_groups | -%>
+<%= $user_login %>:<%= $user_password_hash %>:<%= $user_full_name %>:<%= $user_email %>:<%= $user_groups %>
