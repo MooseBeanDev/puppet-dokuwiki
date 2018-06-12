@@ -1,0 +1,11 @@
+# users.auth.php
+# <?php exit()?>
+# Don't modify the lines above
+#
+# Userfile
+#
+# Format:
+#
+# login:passwordhash:Real Name:email:groups,comma,separated
+
+<%= $dokuwiki::admin_login %>:<%= $dokuwiki::admin_password_hash %>:<%= $dokuwiki::wiki_owner_name %>:<%= $dokuwiki::admin_email %>:admin,user

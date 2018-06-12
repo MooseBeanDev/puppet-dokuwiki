@@ -30,12 +30,12 @@ class dokuwiki::install {
     subscribe   => File['/var/install/dokuwiki-stable.tgz'],
   }
 
-  file { $dokuwiki::install_directory:
-    ensure => directory,
-    source => 'file:///var/install/dokuwiki-2018-04-22a',
+  file { "${dokuwiki::install_directory}/${dokuwiki::install_name}":
+    ensure  => directory,
+    source  => 'file:///var/install/dokuwiki-2018-04-22a',
     recurse => true,
-    owner => $dokuwiki::dir_owner,
-    group => $dokuwiki::dir_group,
+    owner   => $dokuwiki::dir_owner,
+    group   => $dokuwiki::dir_group,
     require => Exec['untar-dokuwiki'],
   }
 }

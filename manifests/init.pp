@@ -5,18 +5,21 @@
 # @example
 #   include dokuwiki
 class dokuwiki (
-  String $wiki_name = $dokuwiki::params::wiki_name,
-  String $download_url = $dokuwiki::params::download_url,
-  String $install_directory = $dokuwiki::params::install_directory,
-  String $license = $dokuwiki::params::license,
-  Numeric $useacl = $dokuwiki::params::useacl,
-  String $admin_login = $dokuwiki::params::admin_login,
-  String $admin_password = $dokuwiki::params::admin_password,
-  String $admin_email = $dokuwiki::params::admin_email,
-  String $dir_owner = $dokuwiki::params::dir_owner,
-  String $dir_group = $dokuwiki::params::dir_group,
+  $wiki_name = $dokuwiki::params::wiki_name,
+  $download_url = $dokuwiki::params::download_url,
+  $install_directory = $dokuwiki::params::install_directory,
+  $license = $dokuwiki::params::license,
+  $useacl = $dokuwiki::params::useacl,
+  $admin_login = $dokuwiki::params::admin_login,
+  $admin_password_hash = $dokuwiki::params::admin_password_hash,
+  $admin_email = $dokuwiki::params::admin_email,
+  $dir_owner = $dokuwiki::params::dir_owner,
+  $dir_group = $dokuwiki::params::dir_group,
+  $wiki_owner_name = $dokuwiki::params::wiki_owner_name,
+  $install_name = $dokuwiki::params::install_name,
 ) inherits dokuwiki::params {
   class {'dokuwiki::install':
     
   }
+  -> class {'dokuwiki::config':}
 }

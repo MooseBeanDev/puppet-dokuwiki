@@ -1,0 +1,11 @@
+<?php
+/**
+ * Dokuwiki's Main Configuration File - Local Settings
+ */
+$conf['title'] = '<%= $dokuwiki::wiki_name %>';
+$conf['lang'] = 'en';
+$conf['license'] = '<%= $dokuwiki::license %>';
+$conf['useacl'] = <%= $dokuwiki::useacl %>;
+$conf['superuser'] = '<%= $dokuwiki::admin_login %>';
+$conf['disableactions'] = 'register';
+
