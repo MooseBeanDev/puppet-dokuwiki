@@ -21,4 +21,5 @@ class dokuwiki::params {
   $dir_group = 'apache'
   $wiki_owner_name = 'Admin'
   $install_name = 'dokuwiki'
+  $staging_directory = '/var/install'
 }

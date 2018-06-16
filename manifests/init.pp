@@ -21,6 +21,7 @@ class dokuwiki (
   $dir_owner = $dokuwiki::params::dir_owner,
   $dir_group = $dokuwiki::params::dir_group,
   $wiki_owner_name = $dokuwiki::params::wiki_owner_name,
+  $staging_directory = $dokuwiki::params::staging_directory,
 ) inherits dokuwiki::params {
   class {'dokuwiki::install':
     
